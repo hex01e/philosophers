@@ -77,6 +77,12 @@ void	run_childs(t_info *info, t_heap **heap)
 	}
 }
 
+void	ff(void)
+{
+	system("leaks philo");
+}
+
+
 int	main(int ac, char *av[])
 {
 	t_info	*info;
@@ -97,7 +103,6 @@ int	main(int ac, char *av[])
 	i = 0;
 	while (i++ < info->number)
 		sem_wait(info->done);
-	i = 0;
 	while (i < info->number)
 		kill(info->philos[i++].pid, SIGKILL);
 	empty_trash(&heap);

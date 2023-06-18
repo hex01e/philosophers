@@ -17,7 +17,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2cb55eb-8a8b-402c-bebd-a4d2a65dee36" name="Changes" comment="" />
+    <list default="true" id="c2cb55eb-8a8b-402c-bebd-a4d2a65dee36" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../philo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../philo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philo_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/philo_bonus.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +34,9 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MakefileLocalSettings">
     <option name="availableProjects">
@@ -80,6 +87,7 @@
     "cf.advertisement.text.overridden": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -147,6 +155,7 @@
       <workItem from="1686924390539" duration="623000" />
       <workItem from="1687015403023" duration="2608000" />
       <workItem from="1687074885469" duration="3968000" />
+      <workItem from="1687084272833" duration="1615000" />
     </task>
     <servers />
   </component>
