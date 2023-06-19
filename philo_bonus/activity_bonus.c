@@ -12,6 +12,20 @@
 
 #include "philo_bonus.h"
 
+void	lets_exit(t_info *info, t_heap **heap)
+{
+	int	i;
+
+	i = 0;
+	sem_close(info->forks);
+	sem_close(info->print);
+	sem_close(info->done);
+	sem_close(info->death);
+	while (i < info->number)
+		sem_close(info->philos[i++].last_sem);
+	empty_trash(heap);
+}
+
 void	*status_synch(void *p)
 {
 	long	time;

@@ -73,10 +73,11 @@ void	*status_synch(void *p);
 void	empty_trash(t_heap **heap);
 void	print(t_philo *this, char *msg);
 void	error(char *msg, t_heap **heap);
-void	*ft_malloc(size_t size, t_heap **heap);
-void	gen_name(t_philo *this, char *s, t_heap **heap);
 void	activity(t_philo *this, t_info *info);
+void	lets_exit(t_info *info, t_heap **heap);
+void	*ft_malloc(size_t size, t_heap **heap);
 void	init_semphs(t_info *info, t_heap **heap);
 void	nap(long time, t_info *info, t_philo *this);
+void	gen_name(t_philo *this, char *s, t_heap **heap);
 
 #endif // PHILO_BONUS_H

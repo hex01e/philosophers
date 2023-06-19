@@ -22,7 +22,7 @@ void	*deid_yet(void	*p)
 	sem_wait(info->death);
 	while (i < info->number)
 		kill(info->philos[i++].pid, SIGKILL);
-	empty_trash(info->heap);
+	lets_exit(info, info->heap);
 	exit(0);
 }
 
@@ -77,19 +77,12 @@ void	run_childs(t_info *info, t_heap **heap)
 	}
 }
 
-void	ff(void)
-{
-	system("leaks philo");
-}
-
-
 int	main(int ac, char *av[])
 {
 	t_info	*info;
 	t_heap	*heap;
 	int		i;
 
-	i = 0;
 	if (ac != 5 && ac != 6)
 		return (write(2, "Error\n", 6), 1);
 	heap = NULL;
@@ -103,7 +96,8 @@ int	main(int ac, char *av[])
 	i = 0;
 	while (i++ < info->number)
 		sem_wait(info->done);
+	i = 0;
 	while (i < info->number)
 		kill(info->philos[i++].pid, SIGKILL);
-	empty_trash(&heap);
+	lets_exit(info, &heap);
 }
