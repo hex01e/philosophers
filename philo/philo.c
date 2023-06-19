@@ -12,9 +12,21 @@
 
 #include "philo.h"
 
-void	ff(void)
+static int	destroy(t_info *info, t_philo *p, t_heap **heap)
 {
-	system("leaks philo");
+	int	j;
+
+	j = 0;
+	while (j++ < info->number)
+	{
+		pthread_mutex_destroy(&(p->fork));
+		pthread_mutex_destroy(&(p->time));
+		p = p->next;
+	}
+	pthread_mutex_destroy(&(info->mflag));
+	pthread_mutex_destroy(&(info->print));
+	empty_trash(heap);
+	return (1);
 }
 
 int	main(int ac, char *av[])
@@ -23,7 +35,6 @@ int	main(int ac, char *av[])
 	t_heap	*heap;
 	t_philo	*philo;
 
-	atexit(ff);
 	if (ac != 5 && ac != 6)
 		return (write(2, "no enaugh arrgament.", 21), 1);
 	heap = NULL;
@@ -37,10 +48,12 @@ int	main(int ac, char *av[])
 	while (philo)
 	{
 		usleep(1000);
-		if (is_died(philo, info))
-			return (empty_trash(&heap), 0);
-		if (info->times != -1 && done_yet(philo))
-			return (empty_trash(&heap), 0);
+		if (is_died(philo, info) || (info->times != -1 && done_yet(philo)))
+		{
+			pthread_mutex_lock(&(info->print));
+			break ;
+		}
 		philo = philo->next;
 	}
+	destroy(info, philo, &heap);
 }

@@ -30,11 +30,13 @@ typedef struct s_heap	t_heap;
 struct s_info
 {
 	int				times;
+	int				flag;
 	long			begin;
 	int				number;
 	int				death_time;
 	int				eating_time;
 	int				sleeping_time;
+	pthread_mutex_t	mflag;
 	pthread_mutex_t	print;
 };
 
@@ -68,8 +70,8 @@ int		setup_philos(t_philo **philo, t_info *info, t_heap **heap);
 
 void	*activity(void *p);
 void	empty_trash(t_heap **heap);
-void	nap(long time, t_info *info, t_philo *this);
+int		nap(long time, t_info *info, t_philo *this);
 void	*_malloc(size_t size, t_heap **heap);
-void	print(t_philo *this, char *msg, int flag);
+void	print(t_philo *this, char *msg);
 
 #endif

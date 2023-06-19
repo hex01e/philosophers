@@ -32,6 +32,7 @@ void	empty_trash(t_heap **heap)
 {
 	t_heap	*tmp;
 
+	usleep(6000);
 	while (*heap)
 	{
 		tmp = *heap;

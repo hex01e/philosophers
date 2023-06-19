@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = philo
-CFLAGS = -Werror -Wall -Wextra
+CFLAGS = -g -Werror -Wall -Wextra
 SRC = philo.c\
 		setup_philos.c\
 		check_args.c\

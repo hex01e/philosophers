@@ -6,7 +6,7 @@
 /*   By: houmanso <houmanso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:20:10 by houmanso          #+#    #+#             */
-/*   Updated: 2023/05/14 16:19:54 by houmanso         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:42:02 by houmanso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ static void	add_to_list(t_philo **philo, t_philo *new)
 		new->next = (*philo);
 	}
 }
-
-//void _destroy(t_info *info, t_philo *philo)
 
 int	setup_philos(t_philo **philo, t_info *info, t_heap **heap)
 {

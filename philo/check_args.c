@@ -79,14 +79,15 @@ t_info	*init_info(char **av, t_heap **heap)
 		if (get_num(av[i++]) < 0)
 			return (empty_trash(heap), NULL);
 	}
+	info->flag = 0;
 	info->number = get_num(av[1]);
 	info->death_time = get_num(av[2]);
 	info->eating_time = get_num(av[3]);
 	info->sleeping_time = get_num(av[4]);
 	info->times = -1;
-	if (av[5])
-		info->times = get_num(av[5]);
-	if (pthread_mutex_init(&(info->print), NULL) != 0)
+	av[5] && (info->times = get_num(av[5]));
+	if (pthread_mutex_init(&(info->print), NULL) != 0
+		|| pthread_mutex_init(&(info->mflag), NULL) != 0)
 		return (empty_trash(heap), NULL);
 	return (info);
 }
