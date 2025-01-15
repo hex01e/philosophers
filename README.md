@@ -2,7 +2,7 @@
 
 ## Overview
 
-*Philosophers** is a project designed to teach the basics of threading and process management in C. Through this project, you will learn to implement and manage threads, mutexes, and semaphores while simulating the classic dining philosophers problem.
+**Philosophers** is a project designed to teach the basics of threading and process management in C. Through this project, you will learn to implement and manage threads, mutexes, and semaphores while simulating the classic dining philosophers problem.
 
 ---
 
